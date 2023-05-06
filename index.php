@@ -1,5 +1,15 @@
 <?php
-
+    if (isset($_GET['pass-length'])) {
+        $length = $_GET['pass-length'];
+        if ($length >= 8 && $length <= 32) {
+            $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_-=+;:,.?';
+            $password = '';
+            for ($i = 0; $i < $length; $i++) {
+                $index = random_int(0, strlen($chars) - 1);
+                $password .= chr(ord($chars[$index]));
+            }
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -13,6 +23,13 @@
     <title>PHP Strong Password Generator</title>
 </head>
 <body>
-    
+    <main>
+        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
+        <label for="pass-length">Enter the desired length, between 8 and 32 characters</label>
+        <input type="number" name="pass-length" id="pass-length" min="8" max="32">
+        <button type="submit">generate</button>
+        </form>
+        <h1><?php echo "Your password is: $password" ?></h1>
+    </main>
 </body>
 </html>
