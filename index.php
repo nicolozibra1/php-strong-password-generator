@@ -1,4 +1,6 @@
 <?php
+    session_start();
+    $_SESSION['isauth'] = true;
     include __DIR__ . '/partials/functions/functions.php';
     $password = getPassword();
 ?>
@@ -15,12 +17,11 @@
 </head>
 <body>
     <main>
-        <form action="<?php echo $_SERVER['PHP_SELF'] ?>" method="GET">
-        <label for="pass-length">Enter the desired length, between 8 and 32 characters</label>
-        <input type="number" name="pass-length" id="pass-length" min="8" max="32">
-        <button type="submit">generate</button>
+        <form action="passGen.php" method="GET">
+            <label for="pass-length">Enter the desired length, between 8 and 32 characters</label>
+            <input type="number" name="pass-length" id="pass-length" min="8" max="32">
+            <button type="submit">Generate</button>
         </form>
-        <h1><?php echo "Your password is: $password" ?></h1>
     </main>
 </body>
 </html>
