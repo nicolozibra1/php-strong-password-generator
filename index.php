@@ -7,10 +7,16 @@
 
 <?php include './partials/template/header.php' ?>
     <main>
-        <form action="passGen.php" method="GET">
-            <label for="pass-length">Enter the desired length, between 8 and 32 characters</label>
+        <form action="passGen.php" method="GET" id="login" class="container w-25 d-flex flex-column align-items-center gap-3">
+            <h4>Please login to proceed</h4>
+            <div class="box-logo">
+                <img src="./img/logo.png" alt="">
+            </div>
+            <label for="username" class="fw-semibold">Your name</label>
+            <input type="text" name="username" required>
+            <label for="pass-length" class="fw-semibold">Enter the desired password length</label>
             <input type="number" name="pass-length" id="pass-length" min="8" max="32">
-            <button type="submit">Generate</button>
+            <button type="submit">LOGIN & GENERATE</button>
         </form>
         <a href="logout.php">Logout</a>
     </main>

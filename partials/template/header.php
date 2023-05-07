@@ -14,7 +14,7 @@
             <div class="box-logo">
                 <img src="./img/logo.png" alt="">
             </div>
-            <h1 class="mt-4">Password Generator</h1>
+            <h1 class="mt-4 text-white">Password Generator</h1>
         </div>
         <h6>Powered by Nicolò Zibra</h6>
     </header>
