@@ -18,7 +18,6 @@
             <input type="number" name="pass-length" id="pass-length" min="8" max="32">
             <button type="submit">LOGIN & GENERATE</button>
         </form>
-        <a href="logout.php">Logout</a>
     </main>
 </body>
 </html>
